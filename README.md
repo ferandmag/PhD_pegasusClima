@@ -8,7 +8,7 @@ can process temperature and humidity data
 creates a directory in the same place where the script is located called "Analysis YYYY-MM-DD , HH-MM--SS ,
 dataset" in which the following files are saved: days_values(csv data averaged per day), stats(csv monthly statistics), figures (pdf with 3 plots).
 
-## required libraries:
+required libraries:
 sys,
 os,
 pandas,
