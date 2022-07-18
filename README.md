@@ -9,13 +9,13 @@ creates a directory in the same place where the script is located called "Analys
 dataset" in which the following files are saved: days_values(csv data averaged per day), stats(csv monthly statistics), figures (pdf with 3 plots).
 
 ## required libraries:
-sys
-os
-pandas
-numpy
-matplotlib.pyplot
-seaborn
-datetime
+sys,
+os,
+pandas,
+numpy,
+matplotlib.pyplot,
+seaborn,
+datetime,
 matplotlib.backends.backend_pdf
 
 
