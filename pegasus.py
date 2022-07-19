@@ -123,7 +123,7 @@ def graph(dataset, variable, startline=6, encoding='cp1252'):
 
     # folder creation
     current_str = datetime.datetime.strftime(datetime.datetime.today(),
-                                             "%Y-%m-%d , %H-%M-%S")
+                                            "%Y-%m-%d , %H-%M-%S")
     folder = f'./Analysis {current_str} , {dataset}'
     os.mkdir(folder)
 
