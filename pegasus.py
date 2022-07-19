@@ -3,7 +3,6 @@
 # import libraries
 import sys
 import os
-from tkinter import Variable
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
