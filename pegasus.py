@@ -23,11 +23,11 @@ def process(dataset, startline=6,  encoding='cp1252'):
     # open the dataframe and select interest data
     df = pd.read_csv(dataset, encoding=encoding)
     df = df.iloc[startline:,]
-    
+
     # rename columns
     df = df.rename(columns={df.columns.values[0]: 'date',
                             df.columns.values[1]:'value'})
-    
+
     # transform column 'date' str to datetime
     df['date'] = pd.to_datetime(df['date'], format='%d-%m-%Y %H:%M')
 
@@ -42,7 +42,7 @@ def process(dataset, startline=6,  encoding='cp1252'):
     export = export.rename(columns={'value':'min_day'})
     export = export.assign(max_day=((df.resample('D').max()).value))
     export = export.assign(mean_day=((df.resample('D').mean()).value))
-        
+
     # create a dataframe with mean and std per month
     stats = df.resample('M').mean()
     stats = stats.rename(columns={'value':'mean_month'})
@@ -63,12 +63,12 @@ def graph(dataset, variable, startline=6, encoding='cp1252'):
 
     # calling process function
     export, stats = process(dataset, startline=6, encoding='cp1252')
-    
+
     if variable == 'temperature':
         yunit = '°C'
     if variable == 'humidity':
         yunit = '%'
-        
+
     # line plots days {variable} (min, max and mean)
     line_plot3 = plt.figure(figsize=(8, 6), dpi=80)
     plt.plot(export.loc[:, 'min_day'],
@@ -91,7 +91,7 @@ def graph(dataset, variable, startline=6, encoding='cp1252'):
     plt.xlabel('Date [days]')
     plt.ylabel(f'{variable} [{yunit}]')
     plt.tight_layout()
-    
+
     # line plots days {variable} (min and max)
     line_plot2 = plt.figure(figsize=(8, 6), dpi=80)
     plt.plot(export.loc[:, 'min_day'],
@@ -123,7 +123,7 @@ def graph(dataset, variable, startline=6, encoding='cp1252'):
 
     # folder creation
     current_str = datetime.datetime.strftime(datetime.datetime.today(),
-                                                "%Y-%m-%d , %H-%M-%S")
+                                             "%Y-%m-%d , %H-%M-%S")
     folder = f'./Analysis {current_str} , {dataset}'
     os.mkdir(folder)
 
