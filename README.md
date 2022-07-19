@@ -35,5 +35,5 @@ encoding is a str
 the csv to process has to be located in the same folder where the script is located
 
 As an example, the 'temp' and 'humidity' files. set in cmd the directory where the script and the csv is located and write:
-python pegasus.py temp.csv temperature
-python pegasus.py humidity.csv humidity
+python pegasus.py temperatura_example.csv temperature
+python pegasus.py humedad_example.csv humidity
