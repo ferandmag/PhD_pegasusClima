@@ -1,6 +1,5 @@
 # ---------pegasus_th---------
 
-FUNCTIONING:
 
 parse and process a csv with historical data downloaded from http://www.climagro.com.ar/Estaciones (the pegasus download is xlsx and must be saved in CSV).
 can process temperature and humidity data.
